@@ -1,58 +1,51 @@
-<p align="center">
-  <img src="./assets/agent-runtime.svg" alt="Yuxi Zhu — AI Agent Developer. Agent runtime online: planning, tools, memory, and evaluation connected." width="100%" />
-</p>
+<div align="center">
 
-<p align="center">
-  <strong>AI Agent Developer · AI Application Engineer</strong><br />
-  I build AI systems that don't just answer questions — they plan, use tools, run experiments, and get things done.
-</p>
+# Yuxi Zhu
 
-<p align="center">
-  <a href="#-systems">Systems</a> ·
-  <a href="#-the-loop">The loop</a> ·
-  <a href="#-toolkit">Toolkit</a> ·
-  <a href="#-connect">Connect</a>
-</p>
+### I build AI systems with somewhere to go and something to do.
+
+<samp>AI Agent Developer · AI Application Engineer</samp>
+
+<br />
+
+`plan` → `use tools` → `touch the real world` → `evaluate` → `try again`
+
+</div>
 
 ---
 
-## `./what-i-build`
+Models are interesting. Systems that can **plan, survive failure, and prove what they did** are more interesting.
 
-| | |
-|---|---|
-| **Agent runtimes** | Long-running systems that plan, call tools, coordinate work, and leave evidence behind. |
-| **Evaluated AI** | Retrieval and generation pipelines measured with real test sets, metrics, and ablations. |
-| **Developer tools** | AI applications designed around the work, not around a chat box. |
+I work on agent runtimes, evaluated RAG, and the infrastructure that turns a promising model response into a result you can inspect.
 
-## `./systems`
+## Selected systems
 
-### 01 / [Oh-My-Claw](https://github.com/JackZhu001/Oh-My-Claw)
+<table>
+  <tr>
+    <td colspan="2">
+      <h3><a href="https://github.com/JackZhu001/Oh-My-Claw">Oh-My-Claw</a> — an agent runtime that finishes the job</h3>
+      <p>Tool calling, context compression, repository retrieval, persistent sessions, loop protection, and a <code>lead → researcher → builder → reviewer</code> workflow.</p>
+      <p><code>Goal → Plan → Tool → Result → Evidence</code></p>
+      <sub>Python · Function calling · Multi-agent workflows · RepoRAG · Observability</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/JackZhu001/Agentic-RAG-DocMind">DocMind</a></h3>
+      <p>An evaluation-driven RAG system with three-route retrieval, BGE reranking, confidence-aware answers, and ablation studies.</p>
+      <p><code>retrieve → rerank → verify</code></p>
+      <sub>Python · Qdrant · BGE-M3 · PyTorch</sub>
+    </td>
+    <td width="50%" valign="top">
+      <h3><a href="https://github.com/JackZhu001/zhupeigen-codex-pet">zhupeigen-codex-pet</a></h3>
+      <p>A cheerful pink desktop companion for Codex—because developer experience can be technically sound and slightly ridiculous.</p>
+      <p><code>art → atlas → runtime → tiny coworker</code></p>
+      <sub>Codex · Shell · Spritesheets</sub>
+    </td>
+  </tr>
+</table>
 
-**An engineering agent runtime built to finish the job.** It combines native tool calling, context compression, repository retrieval, loop protection, persistent sessions, and a `lead → researcher → builder → reviewer` team workflow.
-
-`Goal → Plan → Tool → Result → Evidence`
-
-<sub>Python · Function calling · Multi-agent workflows · RepoRAG · Observability</sub>
-
-### 02 / [Agentic-RAG-DocMind](https://github.com/JackZhu001/Agentic-RAG-DocMind)
-
-**A RAG system that treats retrieval quality as an engineering problem.** Three retrieval routes—HyDE, query rewriting, and BM25—feed BGE reranking and confidence-aware generation, backed by retrieval metrics and ablation studies.
-
-`Query → Hybrid retrieval → Rerank → Confidence gate → Answer + sources`
-
-<sub>Python · Qdrant · BGE-M3 · PyTorch · Evaluation</sub>
-
-### 03 / [zhupeigen-codex-pet](https://github.com/JackZhu001/zhupeigen-codex-pet)
-
-**A cheerful pink desktop companion for Codex.** A small experiment in making developer tools feel more alive, packaged as a lightweight animated pet with a reproducible install path.
-
-`Character art → Animation atlas → Pet runtime → Better desk energy`
-
-<sub>Codex · Shell · Spritesheets · Developer experience</sub>
-
-## `./the-loop`
-
-I care about the full execution loop—the part after the model produces a plausible sentence.
+## The loop
 
 ```mermaid
 flowchart LR
@@ -61,38 +54,33 @@ flowchart LR
     P --> T[Tools]
     T --> E[Environment]
     E --> V[Evidence]
-    V --> Q{Evaluation}
-    Q -->|iterate| A
-    Q -->|ship| D[Done]
+    V --> Q{Good enough?}
+    Q -->|not yet| A
+    Q -->|yes| D[Ship]
 ```
 
-## `~/currently-building`
+The model is one component. The loop is the product.
 
-- **Durable agent workflows** — keeping long tasks grounded with retrieval, state, traces, and review.
-- **Evaluation-first RAG** — measuring retrieval and generation instead of trusting the demo.
-- **Human developer tools** — serious engineering with room for a pink pig in the runtime.
-
-## `./toolkit`
+## Working set
 
 ```text
-AI systems       LLMs · agents · function calling · RAG · reranking · evaluation
-Engineering      Python · TypeScript · React · Docker · Git
-Agent runtime    orchestration · sandboxing · persistence · observability
-ML / retrieval   PyTorch · Transformers · Qdrant · BM25 · BGE
+agent runtimes     tool use · orchestration · persistence · observability
+evaluated AI       RAG · reranking · retrieval metrics · ablation studies
+engineering        Python · TypeScript · React · Docker · Git
+ML / retrieval     PyTorch · Transformers · Qdrant · BM25 · BGE
 ```
 
-## `tail -f agent.log`
+## Contribution snake
 
-```text
-[09:41] goal accepted
-[09:42] tools called; assumptions downgraded to evidence
-[09:43] agent reported "done"
-[09:44] evaluation requested a second opinion
-[09:45] shipped anyway — this time with receipts
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JackZhu001/JackZhu001/output/github-contribution-grid-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JackZhu001/JackZhu001/output/github-contribution-grid-snake.svg" />
+  <img alt="A snake eating Yuxi Zhu's GitHub contribution graph" src="https://raw.githubusercontent.com/JackZhu001/JackZhu001/output/github-contribution-grid-snake.svg" />
+</picture>
 
-## `> connect`
-
-Interested in agents, evaluated AI applications, or useful experiments with LLMs?
-
-[Explore the repositories](https://github.com/JackZhu001?tab=repositories) · [Open a conversation](https://github.com/JackZhu001/JackZhu001/issues)
+<div align="center">
+  <samp>Agent says “done” → ask for evidence.</samp>
+  <br /><br />
+  <a href="https://github.com/JackZhu001?tab=repositories">Explore the systems</a> ·
+  <a href="https://github.com/JackZhu001/JackZhu001/issues">Start a conversation</a>
+</div>
